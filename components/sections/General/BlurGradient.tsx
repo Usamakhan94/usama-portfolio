@@ -1,3 +1,4 @@
+"use client";
 const BlurGradient = () => {
   return (
     <div className="fixed bottom-0 left-0 h-48 w-full pointer-events-none z-40">
