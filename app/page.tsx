@@ -1,13 +1,13 @@
-// import BlurGradient from "@/components/sections/General/BlurGradient";
 import Hero from "@/components/sections/Home/Hero";
 import Skills from "@/components/sections/Home/Skills";
+import Work from "@/components/sections/Home/Work";
 
 export default function Home() {
   return (
     <>
-      {/* <BlurGradient /> */}
       <Hero />
       <Skills />
+      <Work />
       <div className="min-h-screen" />
     </>
   );

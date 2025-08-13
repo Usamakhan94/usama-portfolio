@@ -9,12 +9,55 @@ import { useRef } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 const Skills = () => {
+  const subSkills = [
+    {
+      icon: "",
+      title: "Frontend UI Libraries",
+      libs: ["Tailwind CSS", "Shadcn", "Material UI", "Bootstrap", "Emotion"],
+    },
+    {
+      icon: "",
+      title: "Animation Libraries",
+      libs: ["GSAP", "Framer Motion"],
+    },
+    {
+      icon: "",
+      title: "State Management",
+      libs: ["Redux", "Jotai"],
+    },
+    {
+      icon: "",
+      title: "Core Web Tech",
+      libs: ["TypeScript", "JavaScript"],
+    },
+    {
+      icon: "",
+      title: "Version Control",
+      libs: ["GitHub", "Bitbucket"],
+    },
+    {
+      icon: "",
+      title: "DevOps & Deployment",
+      libs: ["GitHub Actions", "Docker"],
+    },
+    {
+      icon: "",
+      title: "Backend & Database",
+      libs: ["Node.js", "Express.js", "MongoDB"],
+    },
+    {
+      icon: "",
+      title: "Cloud & Backend Services",
+      libs: ["Firebase", "Supabase"],
+    },
+  ];
+
   gsap.registerPlugin(ScrollTrigger);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mainRef = useRef<HTMLDivElement | null>(null);
   useGSAP(() => {
     gsap.from(containerRef.current, {
-      translateY: "-220px",
+      translateY: "-210px",
       scale: 0.9,
       scrollTrigger: {
         trigger: mainRef.current,
@@ -41,7 +84,7 @@ const Skills = () => {
           </p>
         </div>
         <div className="grid grid-cols-4 gap-4 rounded-2xl ">
-          <div className="py-4 px-6 rounded-xl bg-white border-2 flex flex-col gap-2">
+          <div className="py-4 px-6 rounded-xl bg-white border flex flex-col gap-2">
             <div className="relative isolate w-20 h-20">
               <div className="bg-card-foreground absolute top-0 left-0 w-20 h-20 p-3 rounded-full border-2 grid place-items-center">
                 <Image
@@ -61,7 +104,7 @@ const Skills = () => {
               <div className="w-full h-[0.0625rem] bg-black bottom-0 left-0 absolute" />
             </Link>
           </div>
-          <div className="py-4 px-6 rounded-xl bg-white border-2 flex flex-col gap-2">
+          <div className="py-4 px-6 rounded-xl bg-white border flex flex-col gap-2">
             <div className="relative isolate w-20 h-20">
               <div className="bg-card-foreground absolute top-0 left-0 w-20 h-20 p-3 rounded-full border-2 grid place-items-center">
                 <Image
@@ -89,7 +132,7 @@ const Skills = () => {
               <div className="w-full h-[0.0625rem] bg-black bottom-0 left-0 absolute" />
             </Link>
           </div>
-          <div className="py-4 px-6 rounded-xl bg-white border-2 flex flex-col gap-2">
+          <div className="py-4 px-6 rounded-xl bg-white border flex flex-col gap-2">
             <div className="relative isolate w-20 h-20">
               <div className="bg-card-foreground absolute top-0 left-0 w-20 h-20 p-3 rounded-full border-2 grid place-items-center">
                 <Image
@@ -109,7 +152,7 @@ const Skills = () => {
               <div className="w-full h-[0.0625rem] bg-black bottom-0 left-0 absolute" />
             </Link>
           </div>
-          <div className="py-4 px-6 rounded-xl bg-white border-2 flex flex-col gap-2">
+          <div className="py-4 px-6 rounded-xl bg-white border flex flex-col gap-2">
             <div className="relative isolate w-20 h-20">
               <div className="bg-card-foreground absolute top-0 left-0 w-20 h-20 p-3 rounded-full border-2 grid place-items-center">
                 <Image
@@ -130,80 +173,27 @@ const Skills = () => {
             </Link>
           </div>
         </div>
-      </div>
-      <div className="border">
-        <div className="container  px-6 grid grid-cols-2">
-          <div className="border-r border-l py-4 pl-4">
-            <h6 className="text-md">Frontend Styling & UI Libraries</h6>
-            <ul className="text-sm">
-              <li>Tailwind CSS</li>
-              <li>Shadcn</li>
-              <li>Material UI</li>
-              <li>Bootstrap</li>
-              <li>Emotion</li>
-            </ul>
-          </div>
-          <div className="border-r py-4 pl-4">
-            <h6 className="text-md">Animation Libraries</h6>
-            <ul className="text-sm">
-              <li>GSAP</li>
-              <li>Framer Motion</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="">
-        <div className="container  px-6 grid grid-cols-2">
-          <div className="border-r border-l py-4 pl-4">
-            <h6 className="text-md">Frontend State Management & Logic</h6>
-            <ul className="text-sm">
-              <li>Redux</li>
-              <li>Jotai</li>
-            </ul>
-          </div>
-          <div className="border-r py-4 pl-4">
-            <h6 className="text-md">Programming Languages & Core Web Tech</h6>
-            <ul className="text-sm">
-              <li>TypeScript</li>
-              <li>JavaScript</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className=" border">
-        <div className="container  px-6 grid grid-cols-2">
-          <div className="border-r border-l py-4 pl-4">
-            <h6 className="text-md">Version Control & Collaboration</h6>
-            <ul className="text-sm">
-              <li>GitHub</li>
-              <li>Bitbucket</li>
-            </ul>
-          </div>
-          <div className="border-r py-4 pl-4">
-            <h6 className="text-md">DevOps & Deployment</h6>
-            <ul className="text-sm">
-              <li>Docker</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className=" border-b">
-        <div className="container  px-6 grid grid-cols-2">
-          <div className="border-r border-l py-4 pl-4">
-            <h6 className="text-md">Backend & Database</h6>
-            <ul className="text-sm">
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>MongoDB</li>
-            </ul>
-          </div>
-          <div className="border-r py-4 pl-4">
-            <h6 className="text-md">Cloud & Backend Services</h6>
-            <ul className="text-sm">
-              <li>Firebase</li>
-              <li>Supabase</li>
-            </ul>
-          </div>
+        <div className="grid grid-cols-4 col-gap-4 rounded-2xl bg-white  border overflow-hidden ">
+          {subSkills.map((item, index) => (
+            <div
+              key={index + 1}
+              className={`p-8 flex flex-col justify-between gap-2 h-48  ${
+                index == 3 || index == 7 ? "" : "border-r"
+              } ${index > 3 ? "border-t" : ""}`}
+            >
+              <h6 className="text-md font-medium">{item.title}</h6>
+              <ul className="flex items-center justify-start gap-2 flex-wrap">
+                {item.libs.map((lib, libIndex) => (
+                  <li
+                    key={libIndex + lib}
+                    className="bg-card-foreground px-3 py-1 rounded-[8px] border "
+                  >
+                    {lib}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>
