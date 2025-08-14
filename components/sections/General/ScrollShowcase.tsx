@@ -9,8 +9,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ScrollShowcase({
   project,
+  i,
+  projects,
 }: {
   project: { title: string; para: string; src: string; gif: string };
+  i: number;
+  projects: (typeof project)[];
 }) {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const imgRef = useRef<HTMLDivElement | null>(null);
@@ -19,33 +23,53 @@ export default function ScrollShowcase({
     const img = imgRef.current;
     const section = sectionRef.current;
 
-    gsap.set(img, { y: () => -section!.offsetHeight });
+    const sectionHeight = section!.offsetHeight;
+
+    let fromY: number;
+    let toY: number;
+    let startPos: string;
+    let endPos: string;
+
+    if (i === 0) {
+      fromY = 0;
+      toY = sectionHeight;
+      startPos = "top top";
+      endPos = "bottom top";
+    } else if (i === projects.length - 1) {
+      fromY = -sectionHeight;
+      toY = 0;
+      startPos = "top bottom";
+      endPos = "bottom bottom";
+    } else {
+      fromY = -sectionHeight;
+      toY = sectionHeight;
+      startPos = "top bottom";
+      endPos = "bottom top";
+    }
+
+    gsap.set(img, { y: fromY });
 
     gsap.to(img, {
-      y: () => section!.offsetHeight,
+      y: toY,
       ease: "none",
       scrollTrigger: {
         trigger: section,
-        start: "top bottom",
-        end: "bottom top",
+        start: startPos,
+        end: endPos,
         scrub: true,
-        invalidateOnRefresh: true, // recalc on resize
-        // markers: true,
+        invalidateOnRefresh: true,
       },
     });
-  }, []);
+  }, [i, projects.length]);
 
   return (
     <div ref={sectionRef} className="relative grid grid-cols-2 h-screen">
-      {/* LEFT TEXT */}
       <div className="flex items-center">
         <div className="flex-1 p-10">
           <h1 className="text-5xl font-bold">{project.title}</h1>
-          <p className="text-lg text-gray-300">{project.para}</p>
+          <p className="text-lg text-primary">{project.para}</p>
         </div>
       </div>
-
-      {/* RIGHT IMAGE */}
       <div className="relative overflow-hidden h-full w-full flex justify-center items-center">
         <div ref={imgRef} className="w-full h-full flex justify-center">
           <Image

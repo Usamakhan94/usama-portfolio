@@ -2,13 +2,16 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger, SplitText } from "gsap/all";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 const Skills = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(SplitText);
+
   const subSkills = [
     {
       icon: "",
@@ -52,12 +55,13 @@ const Skills = () => {
     },
   ];
 
-  gsap.registerPlugin(ScrollTrigger);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mainRef = useRef<HTMLDivElement | null>(null);
+  const mainHeading = useRef<HTMLHeadingElement | null>(null);
+
   useGSAP(() => {
     gsap.from(containerRef.current, {
-      translateY: "-210px",
+      translateY: "-230px",
       scale: 0.9,
       scrollTrigger: {
         trigger: mainRef.current,
@@ -66,6 +70,25 @@ const Skills = () => {
         scrub: true,
       },
     });
+
+    // const splittedHeading = new SplitText(mainHeading.current, {
+    //   type: "words",
+    // });
+    // let headingWords = splittedHeading.words;
+
+    // gsap.from(headingWords, {
+    //   yPercent: 200,
+    //   stagger: 0.05,
+    //   // ease: "back.out",
+    //   duration: 0.65,
+    //   scrollTrigger: {
+    //     trigger: mainHeading.current,
+    //     // toggleActions: "restart none none reset",
+    //     start: "top center",
+    //     end: "bottom bottom",
+    //     markers: true,
+    //   },
+    // });
   }, {});
 
   return (
@@ -75,9 +98,11 @@ const Skills = () => {
         className="container px-4 flex flex-col gap-4 mb-8"
       >
         <div className="grid grid-cols-2 items-center gap-8">
-          <h2 className="text-xxl font-semibold">
-            Professional Core Skills and Competencies
-          </h2>
+          <div className="overflow-hidden">
+            <h2 className="text-xxl font-semibold ">
+              Professional Core Skills and Competencies
+            </h2>
+          </div>
           <p className="text-lg font-medium">
             Proven results for every project, with a focus on design and
             functionality.

@@ -52,14 +52,19 @@ const Work = () => {
   return (
     <section ref={mainSection} className=" relative isolate min-h-screen py-5">
       <h2
-        ref={mainHeading}
-        className="text-9xl text-center sticky top-1/2 left-0 -z-10"
+        // ref={mainHeading}
+        className="text-9xl text-center "
       >
         Work
       </h2>
-      <div className="container mt-20">
+      <div className="container mt-10">
         {projects.map((item, index) => (
-          <ScrollShowcase project={item} key={index + 1} />
+          <ScrollShowcase
+            project={item}
+            key={index + 1}
+            i={index}
+            projects={projects}
+          />
         ))}
       </div>
     </section>
