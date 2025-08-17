@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -63,14 +64,17 @@ export default function ScrollShowcase({
   }, [i, projects.length]);
 
   return (
-    <div ref={sectionRef} className="relative grid grid-cols-2 h-screen">
-      <div className="flex items-center">
-        <div className="flex-1 p-10">
-          <h1 className="text-5xl font-bold">{project.title}</h1>
-          <p className="text-lg text-primary">{project.para}</p>
-        </div>
+    <div
+      ref={sectionRef}
+      className={`relative flex items-center h-screen gap-20 ${
+        i === projects.length - 1 ? "" : "border-b"
+      }`}
+    >
+      <div className="flex flex-col items-start justify-center py-10 px-4">
+        <h1 className="text-5xl font-bold mb-4">{project.title}</h1>
+        <p className="text-base text-primary">{project.para}</p>
       </div>
-      <div className="relative overflow-hidden h-full w-full flex justify-center items-center">
+      <div className="relative overflow-hidden h-full w-full flex-1/2 flex justify-center items-center">
         <div ref={imgRef} className="w-full h-full flex justify-center">
           <Image
             src={project.src}
@@ -80,6 +84,9 @@ export default function ScrollShowcase({
             className="object-contain w-full h-full"
           />
         </div>
+      </div>
+      <div className="flex h-1/2 items-end justify-end ">
+        <Button>Hello</Button>
       </div>
     </div>
   );

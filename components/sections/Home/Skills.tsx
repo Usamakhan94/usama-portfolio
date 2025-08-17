@@ -121,13 +121,13 @@ const Skills = () => {
               </div>
             </div>
             <h6 className="text-md font-medium">HTML/CSS/JS</h6>
-            <Link
+            {/* <Link
               href={""}
               className="hover:[&>svg]:rotate-0 [&>svg]:-rotate-45 [&>svg]:transition-all flex  items-center gap-12 text-base w-fit relative"
             >
               Contact <FaArrowRight />
               <div className="w-full h-[0.0625rem] bg-black bottom-0 left-0 absolute" />
-            </Link>
+            </Link> */}
           </div>
           <div className="py-4 px-6 rounded-xl bg-white border flex flex-col gap-2">
             <div className="relative isolate w-20 h-20">
@@ -149,13 +149,13 @@ const Skills = () => {
               </div>
             </div>
             <h6 className="text-md font-medium">React.js / Next.js</h6>
-            <Link
+            {/* <Link
               href={""}
               className="hover:[&>svg]:rotate-0 [&>svg]:-rotate-45 [&>svg]:transition-all flex  items-center gap-12 text-base w-fit relative"
             >
               Contact <FaArrowRight />
               <div className="w-full h-[0.0625rem] bg-black bottom-0 left-0 absolute" />
-            </Link>
+            </Link> */}
           </div>
           <div className="py-4 px-6 rounded-xl bg-white border flex flex-col gap-2">
             <div className="relative isolate w-20 h-20">
@@ -169,13 +169,13 @@ const Skills = () => {
               </div>
             </div>
             <h6 className="text-md font-medium">Wordpress</h6>
-            <Link
+            {/* <Link
               href={""}
               className="hover:[&>svg]:rotate-0 [&>svg]:-rotate-45 [&>svg]:transition-all flex  items-center gap-12 text-base w-fit relative"
             >
               Contact <FaArrowRight />
               <div className="w-full h-[0.0625rem] bg-black bottom-0 left-0 absolute" />
-            </Link>
+            </Link> */}
           </div>
           <div className="py-4 px-6 rounded-xl bg-white border flex flex-col gap-2">
             <div className="relative isolate w-20 h-20">
@@ -189,13 +189,13 @@ const Skills = () => {
               </div>
             </div>
             <h6 className="text-md font-medium">DotNet MVC</h6>
-            <Link
+            {/* <Link
               href={""}
               className="hover:[&>svg]:rotate-0 [&>svg]:-rotate-45 [&>svg]:transition-all flex  items-center gap-12 text-base w-fit relative"
             >
               Contact <FaArrowRight />
               <div className="w-full h-[0.0625rem] bg-black bottom-0 left-0 absolute" />
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="grid grid-cols-4 col-gap-4 rounded-2xl bg-white  border overflow-hidden ">
@@ -211,7 +211,7 @@ const Skills = () => {
                 {item.libs.map((lib, libIndex) => (
                   <li
                     key={libIndex + lib}
-                    className="bg-card-foreground px-3 py-1 rounded-[8px] border "
+                    className="bg-card-foreground px-3 py-1 rounded-[8px] border text-amber-50 "
                   >
                     {lib}
                   </li>

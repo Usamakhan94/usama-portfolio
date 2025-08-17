@@ -9,19 +9,17 @@ import ScrollShowcase from "../General/ScrollShowcase";
 
 const Work = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const mainHeading = useRef<HTMLHeadingElement | null>(null);
   const mainSection = useRef<HTMLDivElement | null>(null);
+
   useGSAP(() => {
-    gsap.to(mainHeading.current, {
-      filter: "blur(10px)",
-      opacity: 0,
-      scale: 0.5,
-      scrollTrigger: {
-        trigger: mainSection.current,
-        scrub: true,
-        start: "top 30%",
-        end: "bottom center",
-      },
+    ScrollTrigger.create({
+      trigger: mainSection.current,
+      start: "10% center",
+      end: "bottom 60%",
+      onToggle: (self) =>
+        self.isActive
+          ? document.body.classList.add("dark")
+          : document.body.classList.remove("dark"),
     });
   }, {});
 
@@ -50,14 +48,9 @@ const Work = () => {
   ];
 
   return (
-    <section ref={mainSection} className=" relative isolate min-h-screen py-5">
-      <h2
-        // ref={mainHeading}
-        className="text-9xl text-center "
-      >
-        Work
-      </h2>
-      <div className="container mt-10">
+    <section ref={mainSection} className=" relative isolate min-h-screen p-5">
+      <h2 className="text-9xl text-center ">Work</h2>
+      <div className="container">
         {projects.map((item, index) => (
           <ScrollShowcase
             project={item}

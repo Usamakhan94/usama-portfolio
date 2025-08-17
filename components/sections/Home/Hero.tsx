@@ -3,6 +3,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Image from "next/image";
 import { useRef } from "react";
 
 const Hero = () => {
@@ -23,12 +24,21 @@ const Hero = () => {
   }, {});
 
   return (
-    <section
-      ref={shiftingContainer}
-      className="p-2 relative h-screen z-50 origin-center perspective-dramatic"
-    >
-      <div className="  w-full h-full bg-foreground rounded-3xl flex justify-start items-end">
+    <section className="p-2 relative h-screen z-50 origin-center perspective-dramatic">
+      <div
+        ref={shiftingContainer}
+        className=" relative w-full h-full bg-foreground rounded-3xl flex justify-start items-end overflow-hidden"
+      >
         <h5 className="text-white text-8xl"></h5>
+        <div className="absolute left-1/2 bottom-0 w-[26.25rem] -translate-x-1/2">
+          {/* <Image
+            src={"/my-pic.png"}
+            alt={"Me"}
+            width={600}
+            height={1123}
+            className="object-contain w-full h-full"
+          /> */}
+        </div>
       </div>
     </section>
   );
