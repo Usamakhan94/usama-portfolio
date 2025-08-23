@@ -49,7 +49,7 @@ const Work = () => {
 
   return (
     <section ref={mainSection} className=" relative isolate min-h-screen p-5">
-      <h2 className="text-9xl text-center ">Work</h2>
+      <h2 className="text-9xl text-center uppercase">Work</h2>
       <div className="container">
         {projects.map((item, index) => (
           <ScrollShowcase
